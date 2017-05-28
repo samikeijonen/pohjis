@@ -1,0 +1,43 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin max-width-global {
+	max-width: 1170px;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+// Box shadow featured.
+@mixin box-shadow-featured() {
+	box-shadow: 0px 7px 40px 0px rgba( $color__background-black, 0.15);
+}
+
+// Box shadow featured hover.
+@mixin box-shadow-featured_hover() {
+	box-shadow: 0px 3px 20px 0px rgba( $color__background-black, 0.15);
+}
+
+// Box shadow featured.
+@mixin box-shadow-button() {
+	box-shadow: 0px 1px 15px 0px rgba( $color__background-black, 0.15);
+}

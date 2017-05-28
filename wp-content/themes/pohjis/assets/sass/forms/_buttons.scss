@@ -1,0 +1,136 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+a.button,
+a.button:visited,
+.button > a,
+.button > a:visited {
+	border: 0;
+	border-radius: 2px;
+	background-color: $color__background-button;
+	color: $color__text-light;
+	font-weight: 500;
+	line-height: 1;
+	padding: 0.7em 1.5em 0.75em;
+	text-align: center;
+	transition: all 0.25s ease-in-out;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: lighten( $color__background-button, 4%);
+		@include box-shadow-button();
+		color: $color__text-light;
+		transform: translateY(-1px);
+	}
+
+	&:focus {
+		outline: 1px dotted;
+		outline-offset: -4px;
+	}
+}
+
+.button,
+a.button {
+	display: inline-block;
+}
+
+input[type="button"].button-sec,
+input[type="submit"].button-sec,
+.button-sec,
+a.button-sec,
+a.button-sec:visited,
+.button-sec > a,
+.button-sec > a:visited {
+	background-color: $color__background-button-sec;
+	color: $color__text-main;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: lighten( $color__background-button-sec, 4%);
+		@include box-shadow-button();
+		color: $color__text-main;
+		transform: translateY(-1px);
+	}
+}
+
+input[type="button"].button-3,
+input[type="submit"].button-3,
+.button-3,
+a.button-3,
+a.button-3:visited,
+.button-3 > a,
+.button-3 > a:visited {
+	background-color: $color__background-white;
+	color: $color__link;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: darken( $color__background-white, 4%);
+		@include box-shadow-button();
+		color: $color__link;
+		transform: translateY(-1px);
+	}
+}
+
+.button.button-bigger {
+	font-size: 1.125em;
+	padding: 0.95em 2em 1.05em;
+}
+
+a.button-transparent,
+a.button-transparent:visited {
+	background-color: transparent;
+	border: 1px solid;
+	color: inherit;
+}
+
+a.button.button-transparent {
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $color__background-button-hover;
+		border-color: $color__background-button-hover;
+		color: $color__text-light;
+	}
+}
+
+a.button-transparent.button-header {
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $color__background-body;
+		border-color: $color__background-body;
+		color: $color__text-main;
+	}
+}
+
+// For menu toggle and search buttons.
+.transparency-button {
+	background-color: transparent;
+	border-radius: 0;
+	color: $color__text-main;
+	padding: 0.25rem;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: inherit;
+		color: inherit;
+	}
+
+	&:focus {
+		outline-offset: 0;
+	}
+}
+
+.search-close-button {
+	@include center-block;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}

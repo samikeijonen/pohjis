@@ -1,0 +1,15 @@
+.widget {
+	font-size: 0.9375rem;
+	margin: 0 0 3rem;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+
+}
+
+.widget-author-bio {
+	background-color: $color__background-screen;
+	padding: 1.5rem;
+}

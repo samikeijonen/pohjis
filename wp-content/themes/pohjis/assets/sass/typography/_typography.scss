@@ -1,0 +1,104 @@
+html {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	font-style: normal;
+	font-weight: 400;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	line-height: $font__line-height-body;
+	word-wrap: break-word;
+}
+
+.site {
+	@include font-size(0.9375);
+}
+
+.intro-content p {
+	@include font-size(1);
+}
+
+.header-fp-text,
+.archive-description,
+.entry-subtitle {
+	@include font-size(1);
+
+	&:before {
+		border-bottom: 4px solid $color__background-button-sec;
+		content: "";
+		display: block;
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+		margin-left: auto;
+		margin-right: auto;
+		width: 60px;
+	}
+}
+
+.term-desc {
+	@include font-size(1.125);
+}
+
+.entry-inner-wrapper .entry-summary,
+.entry-meta {
+	@include font-size(0.875);
+}
+
+.testimonial-content .entry-summary {
+	@include font-size(1.125);
+	font-weight: 500;
+}
+
+.footer-text {
+	@include font-size(1);
+}
+
+.bottom-menu {
+	@include font-size(0.875);
+}
+
+@media screen and (min-width: $break__point-main-grid) {
+
+	.site {
+		@include font-size(1.0625);
+	}
+
+	.intro-content p {
+		@include font-size(1.1875);
+	}
+
+	.header-fp-text,
+	.archive-description {
+		@include font-size(1.375);
+	}
+
+	.term-desc {
+		@include font-size(1.375);
+	}
+
+	.entry-inner-wrapper .entry-summary {
+		@include font-size(1);
+	}
+
+	.testimonial-content .entry-summary {
+		@include font-size(1.5);
+	}
+
+	.footer-text {
+		@include font-size(1.375);
+	}
+
+}
+
+@import "headings";
+
+@import "copy";

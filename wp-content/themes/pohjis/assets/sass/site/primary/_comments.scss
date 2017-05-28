@@ -1,0 +1,112 @@
+.bypostauthor {
+}
+
+.comments-area {
+	padding-top: 2rem;
+	padding-bottom: 1.5rem;
+}
+
+.comment-list + .comment-respond,
+.comment-navigation + .comment-respond {
+	padding-top: 1.5rem;
+}
+
+.comments-title,
+.comment-reply-title {
+	font-weight: 500;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.comments-title {
+	margin-bottom: 1.5rem;
+}
+
+.comment-list {
+	list-style: none;
+	margin: 0;
+}
+
+.comment-list article,
+.comment-list .pingback,
+.comment-list .trackback {
+	padding: 2rem 0;
+}
+
+.comment-list .children {
+	list-style: none;
+	margin: 0;
+}
+
+.comment-author {
+	margin-bottom: 0.25em;
+}
+
+.comment-author .avatar {
+	border-radius: 4px;
+	float: left;
+	height: 50px;
+	margin-right: 1em;
+	position: relative;
+	width: 50px;
+}
+
+.comment-author .says {
+	display: none;
+}
+
+.comment-metadata,
+.pingback .edit-link {
+	font-size: 0.88888888em;
+}
+
+.comment-metadata {
+	margin-bottom: 1.5rem;
+}
+
+.comment-metadata .edit-link,
+.pingback .edit-link {
+	display: inline-block;
+	margin-top: 0;
+}
+
+.comment-metadata .edit-link:before,
+.pingback .edit-link:before {
+	content: "\002f";
+	display: inline-block;
+	opacity: 0.7;
+	padding: 0 0.5em;
+}
+
+ol.comment-list ol.children {
+	padding-left: 3%;
+}
+
+.comment-reply-link {
+	display: inline-block;
+	font-size: 0.888888888888em;
+	font-weight: 700;
+}
+
+.comment-form {
+	padding-top: 1.5rem;
+}
+
+.comment-form label {
+	display: block;
+}
+
+.comment-notes,
+.comment-awaiting-moderation,
+.logged-in-as,
+.form-allowed-tags,
+.no-comments {
+	font-style: italic;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.comment-navigation + .no-comments {
+	border-top: 0;
+	padding-top: 0;
+}

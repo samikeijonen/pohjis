@@ -1,0 +1,38 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 2rem;
+}
+
+.section-archives .hentry {
+	border-bottom: 2px solid $color__border-table;
+	margin-bottom: 3.5rem;
+}
+
+.byline,
+.updated:not(.published){
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary,
+.entry-meta {
+	margin: 0 0 2rem;
+}
+
+.entry-meta {
+	margin-bottom: 1rem;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}

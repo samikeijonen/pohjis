@@ -1,0 +1,660 @@
+.main-navigation li:not(.button) > a {
+	@include font-size(1);
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+}
+
+.menu-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.primary-menu {
+	clear: both;
+	display: none;
+	font-weight: 500;
+
+	li {
+		position: relative;
+	}
+
+	a {
+		color: rgba( $color__text-light, 0.85);
+		display: block;
+		text-decoration: none;
+
+		&:hover,
+		&:focus,
+		&.focus,
+		&.active {
+			color: $color__text-light;
+		}
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+		color: $color__text-light;
+	}
+}
+
+@media screen and (max-width: $break__point-main-nav-mobile) {
+
+	/* Small menu. */
+	.menu-toggle,
+	.main-navigation.toggled .primary-menu {
+		display: block;
+	}
+
+	.site-header .grid-wrapper {
+		margin-left: 0;
+
+		& > * {
+			padding-left: 0;
+		}
+	}
+
+	/* Disable scroll on html body when menu is opened. */
+	.disable-scroll {
+		overflow: hidden;
+	}
+
+	.main-navigation {
+		animation-duration: 0.35s;
+		animation-fill-mode: both;
+		background-color: $color__background-element;
+		clip: rect(1px,1px,1px,1px);
+		padding: 5rem 1.25rem 0 1.25rem;
+		padding-top: 20vh;
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 1px;
+		text-align: center;
+		transition: visibility 0.35s linear;
+		visibility: hidden;
+		z-index: 1000;
+
+		& .primary-menu {
+			animation-duration: 0.35s;
+			animation-fill-mode: both;
+			animation-timing-function: ease-in-out;
+		}
+
+		& li {
+			padding-bottom: 0.75rem;
+		}
+
+		& .sub-menu li {
+			padding-bottom: 0;
+		}
+	}
+
+	.main-navigation.toggled {
+		clip: auto;
+		height: auto;
+		opacity: 1;
+		overflow: auto;
+		visibility: visible;
+	}
+
+	.admin-bar .main-navigation.toggled {
+		padding-top: calc(20vh + 32px);
+	}
+
+	.primary-menu .menu-item-has-children .icon {
+		display: none;
+	}
+
+	.site-header .grid-wrapper > .site-branding {
+		margin-right: auto;
+		width: auto;
+	}
+
+	.site-header .grid-wrapper > .menu-toggle {
+		color: $color__text-light;
+		padding-left: 0.25rem;
+		padding-right: 0.25rem;
+		width: auto;
+		height: 32px;
+	}
+
+	.burger-icon,
+	.burger-icon:after,
+	.burger-icon:before {
+		background-color: $color__text-light;
+		display: block;
+		position: relative;
+		width: 28px;
+		height: 4px;
+		transition-property: all;
+		transition-duration: 0.3s;
+	}
+
+	.burger-icon:after,
+	.burger-icon:before {
+		content: "";
+		position: absolute;
+		top: 8px;
+	}
+
+	.burger-icon:before {
+		top: -8px;
+	}
+
+	.menu-toggle.toggled .burger-icon {
+		background-color: transparent;
+	}
+
+	.menu-toggle.toggled .burger-icon:before {
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	.menu-toggle.toggled .burger-icon:after {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+	.icon-logo-pohjis-colors {
+		width: 84px;
+		height: 38px;
+	}
+
+	.menu-toggle {
+		z-index: 1010;
+	}
+
+	.site-header .grid-wrapper > .main-navigation {
+		padding-left: 1rem;
+		padding-right: 1rem;
+
+		& .sub-menu {
+			padding-left: 1rem;
+		}
+
+		& .button {
+			border-top: 1px solid $color__border-table;
+			border-bottom: 1px solid $color__border-table;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			margin-top: 1.25rem; /* 1.5 - 0.25 = 1.25rem. Above this we have menu item which has 0.25rem padding bottom. */
+			margin-bottom: 1.25rem;
+			text-align: center;
+		}
+	}
+
+}
+
+@media screen and (max-width: 782px) {
+
+	.admin-bar .main-navigation.toggled {
+		padding-top: calc(20vh + 46px);
+	}
+
+}
+
+@media screen and (min-width: $break__point-main-nav) {
+
+	.primary-menu {
+		display: block;
+	}
+
+	.menu-toggle {
+		display: none;
+	}
+
+	/* Make menu wrapper absolute because otherwise there is nasty jump when it gets fixed. */
+	.site-header {
+		position: relative;
+	}
+
+	.icon-logo-pohjis-colors {
+		transition: all 0.45s;
+	}
+
+	.primary-menu {
+		text-align: right;
+
+		& .menu-item-has-children .icon {
+			margin-left: 0.25em;
+			top: -0.05em;
+		}
+	}
+
+	.primary-menu > li {
+		display: inline-block;
+		margin-right: 1rem;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	.main-navigation ul {
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+			opacity: 1;
+		}
+
+		ul {
+			background-color: $color__background-element;
+			float: left;
+			opacity: 0;
+			position: absolute;
+			text-align: left;
+			transition-property: opacity;
+			transition-duration: 0.35s;
+			transition-delay: 0.35s;
+			transition: opacity 0.35s ease-in-out;
+			top: 1.875em;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
+
+			li:not(.button) > a {
+				border-bottom: 1px solid rgba( $color__background-white, 0.1);
+				line-height: 1.2;
+				padding: 0.5rem 1rem;
+				width: 10em;
+			}
+
+			li:last-child > a {
+				border-bottom: 0;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+	}
+
+}
+
+.main-navigation ul:not(.sub-menu) > li.button > a,
+.top-menu ul:not(.sub-menu) > li.button > a {
+	@include font-size(1.0625);
+}
+
+/* Pagination and post navigation. */
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+
+.pagination {
+	padding-bottom: 3rem;
+}
+
+.wrapper-archive + .pagination {
+	padding-top: 2.5rem;
+}
+
+.pagination .page-numbers,
+.page-links > a,
+.page-links > span {
+	background-color: $color__background-pre;
+	border: 1px solid rgba( 0, 0, 0, 0.1);
+	border-radius: 2px;
+	display: inline-block;
+	padding: 0.65em 1em;
+	margin-left: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.pagination .dots {
+	background-color: transparent;
+	border: 0;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+}
+
+.pagination .page-numbers:first-child {
+	margin-left: 0;
+}
+
+.pagination .page-numbers.current {
+	background-color: transparent;
+}
+
+@media screen and (min-width: $break__point-main-grid) {
+
+	.grid-wrapper > .pagination {
+		margin-top: 0;
+		margin-bottom: 2rem;
+	}
+
+}
+
+/* Featured Links. */
+.menu-featured {
+
+	& li:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+
+	& a {
+		background-color: $color__background-white;
+		@include box-shadow-featured();
+		display: block;
+		padding: 3rem;
+	}
+
+	& a:hover,
+	& a:focus {
+		@include box-shadow-featured_hover();
+	}
+
+	& .menu-item-description {
+		color: $color__text-main;
+		display: block;
+		font-size: 1.25em;
+		margin-bottom: 1rem;
+
+		& .menu-item-icon {
+			display: block;
+		}
+	}
+
+& .icon {
+		width: 2em;
+		height: 2em;
+		margin-bottom: 0.5rem;
+	}
+
+}
+
+@media screen and (min-width: $break__point-main-grid) {
+
+	.menu-featured-items {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		& > * {
+			width: 48%;
+		}
+	}
+
+	.menu-featured-items > li {
+		display: flex;
+		flex-wrap: wrap;
+		min-height: 1rem;
+	}
+
+	.menu-featured li:not(:last-child) {
+		margin-bottom: 0;
+	}
+
+}
+
+/* Social Links. */
+.menu-social ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-social li {
+	padding-right: 1.25rem;
+}
+
+.menu-social li:last-child {
+	padding-right: 0;
+}
+
+.menu-social a,
+.menu-social a:visited {
+	color: $color__text-main;
+}
+
+.menu-social a {
+	background-color: rgba( $color__background-black, 0.1);
+	border-bottom: none;
+	border-radius: 50%;
+	display: block;
+	position: relative;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.menu-social a:hover,
+.menu-social a:focus,
+.menu-social a:active {
+	background-color: $color__background-white;
+	color: $color__text-main;
+}
+
+.menu-social a:focus {
+	outline-offset: -4px;
+}
+
+.menu-social .icon {
+	position: absolute;
+	top: 0.625rem;
+	left: 0.625rem;
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+/* Bottom nav. */
+.bottom-navigation {
+	padding-top: 2rem;
+}
+
+.bottom-navigation .bottom-menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.bottom-navigation li {
+	border-right: 1px solid rgba( $color__text-main, 0.2);
+	@include font-size(0.875);
+	line-height: 1;
+	padding-right: 0.75rem;
+	margin-right: 0.75rem;
+	margin-bottom: 0.5rem;
+
+	&:last-of-type {
+		border-right: 0;
+		padding-right: 0;
+		margin-right: 0;
+	}
+}
+
+.bottom-navigation .menu-item-pohjis {
+	border-right: 0;
+	margin-right: 0;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+	@include font-size(0.875);
+	text-align: center;
+
+	& a,
+	& a:visited {
+		color: $color__text-light;
+	}
+}
+
+.breadcrumbs .trail-browse,
+.breadcrumbs .trail-items,
+.breadcrumbs .trail-items li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+}
+
+.breadcrumbs .trail-browse {
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+
+.breadcrumbs .trail-items {
+	list-style: none;
+}
+
+.trail-items li::after {
+	content: "\002F";
+	font-size: 0.88888888em;
+	padding: 0 0.5em;
+}
+
+.trail-items li:last-of-type::after {
+	display: none;
+}
+
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Daniel Eden
+*/
+
+.animated {
+	animation-duration: 350ms;
+	animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+	}
+
+	to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+	}
+
+  to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.slideInDown {
+	animation-name: slideInDown;
+}
+
+@-webkit-keyframes slideOutUp {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+
+	to {
+		visibility: hidden;
+		transform: translate3d(0, -100%, 0);
+	}
+}
+
+@keyframes slideOutUp {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+
+	to {
+		visibility: hidden;
+		transform: translate3d(0, -100%, 0);
+	}
+}
+
+.slideOutUp {
+	animation-name: slideOutUp;
+}
+
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.fadeOut {
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut;
+}

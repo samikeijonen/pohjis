@@ -1,0 +1,615 @@
+# Copyright (C) 2017 pohjis
+# This file is distributed under the same license as the pohjis package.
+msgid ""
+msgstr ""
+"Project-Id-Version: pohjis\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
+"_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;"
+"esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:20
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups, sivua ei löytynyt."
+
+#: 404.php:24
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Näyttää siltä, että mitään ei löytynyt tästä osoitteesta. Koita navigoida "
+"alla olevista linkeistä tai etsiä haluamaasi."
+
+#: 404.php:34
+msgid "Most Used Categories"
+msgstr "Käytetyimmät kategoriat"
+
+#: comments.php:31
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Yksi kommentti artikkelissa &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s kommenttia artikkelissa &ldquo;%2$s&rdquo;"
+
+#: comments.php:50
+msgid "Newer comments"
+msgstr "Uudemmat kommentit"
+
+#: comments.php:51
+msgid "Older comments"
+msgstr "Vanhemman kommentit"
+
+#: comments.php:60
+msgid "Comments are closed."
+msgstr "Kommentointi on suljettu."
+
+#: footer.php:159
+msgid "Finnish national agency for education"
+msgstr "Opetushallitus"
+
+#: functions.php:53
+msgid "Primary"
+msgstr "Päävalikko"
+
+#: functions.php:54
+msgid "Top"
+msgstr "Ylävalikko"
+
+#: functions.php:55
+msgid "Bottom"
+msgstr "Footerin valikko"
+
+#: functions.php:56
+msgid "Social links in the footer"
+msgstr "Some-linkit alapalkissa"
+
+#: functions.php:104
+msgid "Sidebar"
+msgstr "Sivupalkki"
+
+#: functions.php:106
+msgid "Add widgets here."
+msgstr "Lisää vimpaimia tähän."
+
+#: functions.php:140
+msgctxt "Raleway font: on or off"
+msgid "on"
+msgstr "on"
+
+#: header.php:24
+msgid "Skip to content"
+msgstr "Siirry sisältöön"
+
+#: header.php:43
+msgid "Top navigation"
+msgstr "Ylänavigaatio"
+
+#: header.php:72, header.php:94
+msgid "Open search"
+msgstr "Avaa haku"
+
+#: header.php:73
+msgid "Menu"
+msgstr "Valikko"
+
+#: header.php:75
+msgid "Primary navigation"
+msgstr "Päävalikko"
+
+#: header.php:119
+msgid "Close search"
+msgstr "Sulje haku"
+
+#: header.php:137
+msgid "Search Results for: %s"
+msgstr "Hakutulokset haulle %s"
+
+#: searchform.php:13
+msgctxt "label"
+msgid "Search for:"
+msgstr "Etsi:"
+
+#: searchform.php:15
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Haku &hellip;"
+
+#: searchform.php:16
+msgctxt "submit button"
+msgid "Search"
+msgstr "Hae"
+
+#: single-service.php:59, taxonomy-service_cat.php:86
+msgid "Contact info"
+msgstr "Yhteystiedot"
+
+#: single.php:32
+msgid "Related posts"
+msgstr "Aiheeseen liittyvää"
+
+#: inc/filters.php:16
+msgid "&hellip;"
+msgstr "&hellip;"
+
+#: inc/filters.php:61
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Hakutulokset haulle &#8221;%s&#8221;"
+
+#: inc/function-icons.php:41, inc/function-icons.php:117
+msgid "Please define default parameters in the form of an array."
+msgstr "Määrittele oletusparametrit array-muodossa."
+
+#: inc/function-icons.php:46, inc/function-icons.php:122
+msgid "Please define an SVG icon filename."
+msgstr "Määrittele SVG-ikonin tiedostonimi."
+
+#: inc/polylang.php:12, inc/customizer/settings-footer.php:25
+msgid "Footer title"
+msgstr "Alapalkin otsikko"
+
+#: inc/polylang.php:13, inc/customizer/settings-footer.php:45
+msgid "Footer text"
+msgstr "Alapalkin teksti"
+
+#: inc/polylang.php:14, inc/customizer/settings-school.php:47
+msgid "School title"
+msgstr "Koulujen otsikko"
+
+#: inc/polylang.php:15, inc/customizer/settings-school.php:67
+msgid "School description"
+msgstr "Koulujen kuvaus"
+
+#: inc/polylang.php:16, inc/customizer/settings-school.php:87
+msgid "School extra title"
+msgstr "Koulujen extra-otsikko"
+
+#: inc/polylang.php:17, inc/customizer/settings-school.php:107
+msgid "School extra description"
+msgstr "Koulujen extra-otsikko"
+
+#: inc/polylang.php:18, inc/customizer/settings-service.php:47
+msgid "Service title"
+msgstr "Palveluiden otsikko"
+
+#: inc/polylang.php:19, inc/customizer/settings-service.php:67
+msgid "Service description"
+msgstr "Palveluiden kuvaus"
+
+#: inc/polylang.php:20, inc/customizer/settings-service.php:87
+msgid "Service extra title"
+msgstr "Palveluiden extra-otsikko"
+
+#: inc/polylang.php:21, inc/customizer/settings-service.php:107
+msgid "Service extra description"
+msgstr "Palveluiden extra-kuvaus"
+
+#: inc/template-tags.php:28
+msgctxt "post date"
+msgid "%1$s %2$s"
+msgstr "%1$s %2$s"
+
+#: inc/template-tags.php:29
+msgid "Posted on"
+msgstr "Kirjoitettu"
+
+#: inc/template-tags.php:34
+msgctxt "post author"
+msgid "by %s"
+msgstr "kirjoittanut %s"
+
+#: inc/template-tags.php:49, inc/template-tags.php:55
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:51
+msgid "Posted in %1$s"
+msgstr "Kategoriat %1$s"
+
+#: inc/template-tags.php:57
+msgid "Tagged %1$s"
+msgstr "Avainsanat %1$s"
+
+#. translators: %s: post title
+#: inc/template-tags.php:64
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+"Jätä kommentti<span class=\"screen-reader-text\"> artikkeliin %s</span>"
+
+#: inc/template-tags.php:71
+msgid "Edit %s"
+msgstr "Muokkaa %s"
+
+#: inc/template-tags.php:88
+msgctxt "Used before post author name."
+msgid "Author"
+msgstr "Kirjoittaja"
+
+#: inc/template-tags.php:101
+msgid "Page"
+msgstr "Sivu"
+
+#: inc/template-tags.php:113
+msgid "Read article %s"
+msgstr "Lue kirjoitus %s"
+
+#: inc/template-tags.php:154
+msgid "Share:"
+msgstr "Jaa:"
+
+#: inc/template-tags.php:160
+msgid "Share on Facebook"
+msgstr "Jaa Facebookissa"
+
+#: inc/template-tags.php:168
+msgid "Share on Twitter"
+msgstr "Jaa Twitterissä"
+
+#: inc/template-tags.php:176
+msgid "Share on Linkedin"
+msgstr "Jaa Linkedinissä"
+
+#: lyyti/event.php:33
+msgid "Read more and sign in"
+msgstr "Lue lisää ja ilmoittaudu"
+
+#: lyyti/index.php:4
+msgid "Show All"
+msgstr "Näytä kaikki"
+
+#: menus/menu-footer.php:11
+msgid "Bottom navigation"
+msgstr "Alapalkin navigaatio"
+
+#: menus/menu-social.php:11
+msgid "Social Menu"
+msgstr ""
+
+#: template-parts/content-none.php:15
+msgid "Nothing Found"
+msgstr "Mitään ei löytynyt"
+
+#: template-parts/content-none.php:22
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Oletko valmis julkaisemaan ensimmäisen artikkelisi? <a href=\"%1$s\">Aloita "
+"tästä</a>."
+
+#: template-parts/content-none.php:26
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Hakusi ei valitettavasti tuottanut yhtään tulosta. Yritä uudelleen eri "
+"hakusanoilla."
+
+#: template-parts/content-none.php:32
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
+
+#: template-parts/content-page.php:18
+msgid "Pages:"
+msgstr "Sivut:"
+
+#: template-parts/content-school.php:19, template-parts/content-service.php:31,
+#: template-parts/content-staff.php:25, templates/front-page.php:260
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Jatka lukemista %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: templates/front-page.php:77
+msgctxt "term name"
+msgid "More info %s"
+msgstr "Lisätietoja %s"
+
+#: inc/customizer/settings-contact.php:7
+msgid "Contact"
+msgstr "Ota yhteyttä"
+
+#: inc/customizer/settings-contact.php:25
+msgid "Contact text"
+msgstr "Ota yhteyttä -teksti"
+
+#: inc/customizer/settings-contact.php:45, inc/metabox/front-page.php:37,
+#: inc/metabox/front-page.php:57
+msgid "Link text"
+msgstr "Linkin teksti"
+
+#: inc/customizer/settings-contact.php:65
+msgid "Contact page to link"
+msgstr "Yhteystiedot-sivu minne linkki vie"
+
+#: inc/customizer/settings-contact.php:85
+msgid "Contact form shortcode"
+msgstr "Yhteydenottolomakkeen shortcode (lyhytkoodi)"
+
+#: inc/customizer/settings-footer.php:7
+msgid "Footer"
+msgstr "Alapalkki"
+
+#: inc/customizer/settings-school.php:7
+msgid "School"
+msgstr "Koulut"
+
+#: inc/customizer/settings-school.php:27,
+#: inc/customizer/settings-service.php:27
+msgid "Header Image (1920x580px)"
+msgstr "Otsakekuva (1920x580px)"
+
+#: inc/customizer/settings-service.php:7
+msgid "Service"
+msgstr "Palvelut"
+
+#: inc/metabox/front-page.php:18
+msgid "Header callout text"
+msgstr "Headerin callout-teksti"
+
+#: inc/metabox/front-page.php:20
+msgid "Header callout URL"
+msgstr "Headerin callout-URL"
+
+#: inc/metabox/front-page.php:14
+msgid "Header Callout link"
+msgstr "Headerin callout-linkki"
+
+#: inc/metabox/front-page.php:32
+msgid "1140x680px"
+msgstr ""
+
+#: inc/metabox/front-page.php:31, inc/metabox/front-page.php:54,
+#: inc/metabox/page-school.php:53, inc/metabox/page-school.php:104,
+#: inc/metabox/page-school.php:145, inc/metabox/post.php:27,
+#: inc/metabox/service.php:47, inc/metabox/service.php:98,
+#: inc/metabox/service.php:144
+msgid "Image"
+msgstr "Kuva"
+
+#: inc/metabox/front-page.php:33, inc/metabox/front-page.php:56,
+#: inc/metabox/post.php:29, inc/metabox/post.php:42,
+#: inc/metabox/service.php:146, inc/metabox/term-meta.php:16
+msgid "Title"
+msgstr "Otsikko"
+
+#: inc/metabox/front-page.php:35, inc/metabox/page-school.php:45,
+#: inc/metabox/page-school.php:63, inc/metabox/page-school.php:70,
+#: inc/metabox/page-school.php:77, inc/metabox/page-school.php:86,
+#: inc/metabox/page-school.php:94, inc/metabox/page-school.php:112,
+#: inc/metabox/page-school.php:120, inc/metabox/page-school.php:130,
+#: inc/metabox/service.php:39, inc/metabox/service.php:57,
+#: inc/metabox/service.php:64, inc/metabox/service.php:71,
+#: inc/metabox/service.php:80, inc/metabox/service.php:88,
+#: inc/metabox/service.php:106, inc/metabox/service.php:114,
+#: inc/metabox/service.php:124
+msgid "Text"
+msgstr "Teksti"
+
+#: inc/metabox/front-page.php:39, inc/metabox/front-page.php:59,
+#: inc/metabox/post.php:31, inc/metabox/service.php:148
+msgid "Link URL"
+msgstr "Linkin URL"
+
+#: inc/metabox/front-page.php:29
+msgid "Featured"
+msgstr "Nostot"
+
+#: inc/metabox/front-page.php:25, inc/metabox/service.php:142
+msgid "Featured content"
+msgstr "Nostot-osio"
+
+#: inc/metabox/front-page.php:64
+msgid "Callout text"
+msgstr "Callout-teksti"
+
+#: inc/metabox/front-page.php:66
+msgid "Callout URL"
+msgstr "Callout-URL"
+
+#: inc/metabox/front-page.php:55, inc/metabox/post.php:28,
+#: inc/metabox/service.php:145
+msgid "1110x750px"
+msgstr ""
+
+#: inc/metabox/front-page.php:52
+msgid "News"
+msgstr "Ajankohtaista"
+
+#: inc/metabox/front-page.php:49
+msgid "Main title"
+msgstr "Pääotsikko"
+
+#: inc/metabox/front-page.php:45
+msgid "Topical news"
+msgstr "Ajankohtaista-osio"
+
+#: inc/metabox/front-page.php:75
+msgid "Blog title"
+msgstr "Blogin otsikko"
+
+#: inc/metabox/front-page.php:76
+msgid "Blog callout text"
+msgstr "Blogin callout-teksti"
+
+#: inc/metabox/front-page.php:78
+msgid "Blog callout URL"
+msgstr "Blogin callout-URL"
+
+#: inc/metabox/front-page.php:71
+msgid "Blog"
+msgstr "Blogi-osio"
+
+#: inc/metabox/front-page.php:88, inc/metabox/page-school.php:146,
+#: inc/metabox/term-meta.php:24
+msgid "1920x580px"
+msgstr ""
+
+#: inc/metabox/front-page.php:87
+msgid "Testimonial area background image"
+msgstr "Suositus-osion taustakuva"
+
+#: inc/metabox/front-page.php:89
+msgid "Testimonial callout text"
+msgstr "Suosituksien callout-teksti"
+
+#: inc/metabox/front-page.php:91
+msgid "Testimonial callout URL"
+msgstr "Suosituksien callout-URL"
+
+#: inc/metabox/front-page.php:83, inc/metabox/service.php:171
+msgid "Testimonial"
+msgstr "Suositukset-osio"
+
+#: inc/metabox/page-school.php:22, inc/metabox/service.php:17
+msgid "Title before content"
+msgstr "Otsikko ennen sisältöä"
+
+#: inc/metabox/page-school.php:18
+msgid "Page layout extra title"
+msgstr "Sivun extra-otsikko"
+
+#: inc/metabox/page-school.php:35, inc/metabox/service.php:29
+msgid "Select template"
+msgstr "Valitse ulkoasupohja"
+
+#: inc/metabox/page-school.php:36, inc/metabox/service.php:30
+msgid "Three columns of content"
+msgstr "Kolme saraketta tekstiä"
+
+#: inc/metabox/page-school.php:37, inc/metabox/service.php:31
+msgid "Two columns of content"
+msgstr "Kaksi saraketta tekstiä"
+
+#: inc/metabox/page-school.php:38, inc/metabox/service.php:32
+msgid "One column"
+msgstr "Yksi sarake tekstiä"
+
+#: inc/metabox/page-school.php:39, inc/metabox/service.php:33
+msgid "Image and two columns"
+msgstr "Kuva ja kaksi saraketta sisältöä"
+
+#: inc/metabox/page-school.php:40, inc/metabox/service.php:34
+msgid "Text with image on the right"
+msgstr "Teksti ja kuva oikealla"
+
+#: inc/metabox/page-school.php:32, inc/metabox/service.php:26
+msgid "Template"
+msgstr "Ulkoasupohja"
+
+#: inc/metabox/page-school.php:105, inc/metabox/service.php:99
+msgid "1200x400px"
+msgstr ""
+
+#: inc/metabox/page-school.php:30, inc/metabox/post.php:43,
+#: inc/metabox/service.php:24, inc/metabox/term-meta.php:17
+msgid "Content"
+msgstr "Sisältö"
+
+#: inc/metabox/page-school.php:26
+msgid "Page layout content"
+msgstr "Sivun ulkoasupohjien sisältö"
+
+#: inc/metabox/page-school.php:142, inc/metabox/term-meta.php:23
+msgid "Header Image"
+msgstr "Otsakekuva"
+
+#: inc/metabox/post.php:17
+msgid "Writer name"
+msgstr "Kirjoittajan nimi"
+
+#: inc/metabox/post.php:18
+msgid "Writer bio"
+msgstr "Kirjoittajan bio"
+
+#: inc/metabox/post.php:14
+msgid "Article writer details"
+msgstr "Artikkelin kirjoittajan tiedot"
+
+#: inc/metabox/post.php:25, inc/metabox/post.php:22
+msgid "Related content"
+msgstr "Aiheeseen liittyvää"
+
+#: inc/metabox/post.php:40, inc/metabox/post.php:37
+msgid "Sidebar content"
+msgstr "Sivupalkin sisältö"
+
+#: inc/metabox/service.php:14
+msgid "Layout extra title"
+msgstr "Ulkoasun extra-otsikko"
+
+#: inc/metabox/service.php:21
+msgid "Layout content"
+msgstr "Ulkoasupohjien sisältö"
+
+#: inc/metabox/service.php:138
+msgid "Featured title"
+msgstr "Nostojen otsikko"
+
+#: inc/metabox/service.php:139
+msgid "Featured text"
+msgstr "Nostojen teksti"
+
+#: inc/metabox/service.php:135
+msgid "Featured for service"
+msgstr "Palvelun nosto-osio"
+
+#: inc/metabox/service.php:158, inc/metabox/term-meta.php:31
+msgid "Select staff category from which you want to show contact info"
+msgstr ""
+"Valitse Ihmiset-kategoria, jotka haluat näyttää tämän palvelun "
+"yhteystiedoissa"
+
+#: inc/metabox/service.php:157, inc/metabox/term-meta.php:30
+msgid "Staff category"
+msgstr "Ihmiset-kategoria"
+
+#: inc/metabox/service.php:154
+msgid "Staff category for this service"
+msgstr "Ihmiset-kategoria tälle palvelulle"
+
+#: inc/metabox/service.php:172
+msgid "Select testimonial which you want to show"
+msgstr "Valitse suositus, joka näytetään tämän palvelun alapuolella"
+
+#: inc/metabox/service.php:168
+msgid "Testimonial for this service"
+msgstr "Suositus tähän palveluun"
+
+#: inc/metabox/term-meta.php:13
+msgid "Service category settings"
+msgstr "Palvelu-kategorian asetukset"
+
+#: inc/metabox/term-meta.php:20
+msgid "Category header image"
+msgstr "Kategorian otsakekuva"
+
+#: inc/metabox/term-meta.php:27
+msgid "Staff category settings"
+msgstr "Ihmiset-kategorian asetukset"
+
+#~ msgid "Service content"
+#~ msgstr "Palveluiden sisältö"
+
+#~ msgid "School  blog category"
+#~ msgstr "Koulun blogi-kategoria"
+
+#~ msgid "Blog category for this school"
+#~ msgstr "Tähän kouluun liittyvä blogi-kategoria"
+
+#~ msgid "Select posts for featured section."
+#~ msgstr "Valitse artikkelit nosto-osioon."
+
+#~ msgid "Try looking in the monthly archives. %1$s"
+#~ msgstr "Koita etsiä kuukausiarkistosta. %1$s"

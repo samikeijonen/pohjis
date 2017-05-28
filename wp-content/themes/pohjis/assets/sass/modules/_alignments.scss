@@ -1,0 +1,53 @@
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+	margin-bottom: 1em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+	margin-bottom: 1em;
+}
+
+.aligncenter {
+	clear: both;
+	@include center-block;
+}
+
+.wide.aligncenter,
+.wide.alignnone,
+.wp-caption.aligncenter .wide,
+.wp-caption.alignnone .wide {
+	margin-left: -1rem;
+	margin-right: -1rem;
+	max-width: calc(100% + 2rem);
+}
+
+@media screen and (min-width: 62.875em) {
+
+	.wide.aligncenter,
+	.wide.alignnone,
+	.wp-caption.aligncenter .wide,
+	.wp-caption.alignnone .wide {
+		margin-left: -100px;
+		margin-right: -100px;
+		max-width: calc(100% + 200px);
+	}
+
+}
+
+@media screen and (min-width: 73.875em) {
+
+	.wide.aligncenter,
+	.wide.alignnone,
+	.wp-caption.aligncenter .wide,
+	.wp-caption.alignnone .wide {
+		margin-left: -200px;
+		margin-right: -200px;
+		max-width: calc(100% + 400px);
+	}
+
+}

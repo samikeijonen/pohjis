@@ -1,0 +1,56 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea,
+select {
+	background-color: $color__background-white;
+	color: $color__text-input;
+	border: 2px solid $color__border-input;
+	border-radius: 0;
+	padding: 0.5rem;
+	transition: all 0.25s ease-in-out;
+	width: 100%;
+
+	&:focus {
+		border-color: $color__border-input-focus;
+		@include box-shadow-button();
+		color: $color__text-input-focus;
+		outline: 0;
+	}
+}
+
+.entry-content select {
+	background: url("assets/images/svg/arrow-dropdown-blue.svg") no-repeat 99% 48%;
+	background-size: 0.875em;
+	-webkit-appearance : none; /* To gain control over the appearance on WebKit */
+	-moz-appearance : none; /* To gain control over the appearance on Gecko */
+}
+
+.entry-content select::-ms-expand {
+	display: none; /* Hide native dropdown arrow in IE. */
+}
+
+fieldset {
+	border: 1px solid $color__border-table;
+	margin: 0 0 2rem;
+}
+
+label {
+	font-weight: 500;
+}
+
+.post-password-form input[type="submit"] {
+	margin-top: 1rem;
+}
