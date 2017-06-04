@@ -16,7 +16,7 @@
 					array(
 						'theme_location'  => 'featured',
 						'container_class' => 'featured-menu-wrapper',
-						'menu_id'         => 'menu-featured-items',
+						'menu_id'         => '',
 						'menu_class'      => 'menu-featured-items',
 						'depth'           => 1,
 					)
