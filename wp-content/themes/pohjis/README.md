@@ -1,4 +1,4 @@
 Pohjis
 ===
 
-Custom theme for pohjis.fi site.
+Custom theme for [Pohjois-Tapiola upper secondary school](https://pohjois-tapiola.com/lukio/) site.
