@@ -104,6 +104,10 @@ msgstr ""
 msgid "Search results for &#8220;%s&#8221;"
 msgstr ""
 
+#: inc/filters.php:146
+msgid "Pohjis thumbnail"
+msgstr ""
+
 #: inc/function-icons.php:41, inc/function-icons.php:117
 msgid "Please define default parameters in the form of an array."
 msgstr ""
@@ -272,6 +276,14 @@ msgstr ""
 msgid "Continue reading %s"
 msgstr ""
 
+#: inc/customizer/settings-images.php:7
+msgid "Images"
+msgstr ""
+
+#: inc/customizer/settings-images.php:26
+msgid "Portfolio header image"
+msgstr ""
+
 #: inc/customizer/settings-insta.php:7
 msgid "Instagram"
 msgstr ""
@@ -280,7 +292,7 @@ msgstr ""
 msgid "Instagram access token"
 msgstr ""
 
-#: inc/metabox/intro-page.php:31
+#: inc/metabox/intro-page.php:31, inc/metabox/teme-page.php:97
 msgid "Intro"
 msgstr ""
 
@@ -288,11 +300,11 @@ msgstr ""
 msgid "Before the content"
 msgstr ""
 
-#: inc/metabox/intro-page.php:54, inc/metabox/teme-page.php:97
+#: inc/metabox/intro-page.php:54, inc/metabox/teme-page.php:114
 msgid "Column 1"
 msgstr ""
 
-#: inc/metabox/intro-page.php:71, inc/metabox/teme-page.php:114
+#: inc/metabox/intro-page.php:71, inc/metabox/teme-page.php:131
 msgid "Column 2"
 msgstr ""
 
@@ -300,11 +312,11 @@ msgstr ""
 msgid "Courses"
 msgstr ""
 
-#: inc/metabox/intro-page.php:97, inc/metabox/teme-page.php:140
+#: inc/metabox/intro-page.php:97, inc/metabox/teme-page.php:157
 msgid "Courses column 1"
 msgstr ""
 
-#: inc/metabox/intro-page.php:114, inc/metabox/teme-page.php:157
+#: inc/metabox/intro-page.php:114, inc/metabox/teme-page.php:174
 msgid "Courses column 2"
 msgstr ""
 
@@ -332,14 +344,14 @@ msgstr ""
 msgid "Callout text"
 msgstr ""
 
-#: inc/metabox/teme-page.php:130
+#: inc/metabox/teme-page.php:147
 msgid "TeMe courses"
 msgstr ""
 
-#: inc/metabox/teme-page.php:173
+#: inc/metabox/teme-page.php:190
 msgid "Apply"
 msgstr ""
 
-#: inc/metabox/teme-page.php:183
+#: inc/metabox/teme-page.php:200
 msgid "How to apply"
 msgstr ""
