@@ -60,7 +60,7 @@ if ( $blog_query->have_posts() ) : ?>
 
 				if ( false === $magazine_posts ) :
 					// Get latest posts from magazine.
-					$response  = wp_remote_get( esc_url_raw( 'http://pohjois-tapiola.com/lukio/verkkolehti/wp-json/wp_query/args/?' . $query_str ) );
+					$response  = wp_remote_get( esc_url_raw( 'https://pohjiksenverkkolehti.fi/wp-json/wp_query/args/?' . $query_str ) );
 
 					// Get array of Post Objects.
 					if ( ! is_wp_error( $response ) ) :
