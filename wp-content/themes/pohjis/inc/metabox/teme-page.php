@@ -83,9 +83,26 @@ function pohjis_register_teme_meta_fields( $butterbean, $post_type ) {
 	$manager->register_section(
 		'teme_section_1',
 		array(
-			'label' => esc_html__( 'Before the content', 'pohjis' ),
-			'icon'  => 'dashicons-admin-generic',
+			'label'           => esc_html__( 'Before the content', 'pohjis' ),
+			'icon'            => 'dashicons-admin-generic',
 			'active_callback' => false,
+		)
+	);
+
+	$manager->register_control(
+		$prefix . 'teme_intro', // Same as setting name.
+		array(
+			'type'    => 'text',
+			'section' => 'teme_section_1',
+			'label'   => esc_html__( 'Intro', 'pohjis' ),
+			'attr'    => array( 'class' => 'widefat' ),
+		)
+	);
+
+	$manager->register_setting(
+		$prefix . 'teme_intro', // Same as control name.
+		array(
+			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 
