@@ -16,8 +16,17 @@ get_header(); ?>
 
 			<?php
 			// Before content.
+			$intro    = pohjis_get_post_meta( $id, 'teme_intro' );
 			$column_1 = pohjis_get_post_meta( $id, 'teme_column_1' );
 			$column_2 = pohjis_get_post_meta( $id, 'teme_column_2' );
+
+			if ( isset( $intro ) && $intro ) :
+				echo '<div class="section">';
+					echo '<div class="wrapper center-block">';
+						echo '<p class="bigger-text text-align-center">' . esc_html( $intro ) . '</p>';
+					echo '</div>';
+				echo '</div>';
+			endif;
 
 			if ( isset( $column_1 ) && $column_1 && isset( $column_2 ) && $column_2 ) :
 				echo '<div class="before-content-section teme-page-section section">';
