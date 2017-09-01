@@ -25,7 +25,7 @@
 }
 
 /* Support for grid. */
-@supports (display: grid) {
+@supports (grid-area: auto) {
 
 	.insta-feed-section {
 		display: grid;
@@ -435,7 +435,7 @@
 	}
 
 	/* Support for grid. */
-	@supports (display: grid) {
+	@supports (grid-area: auto) {
 
 		.insta-feed-section {
 			display: grid;
@@ -549,4 +549,43 @@
 		margin-bottom: 4rem;
 	}
 
+}
+
+/* Calculte grades CSS. */
+.calculate-grades {
+	fieldset {
+		border: none;
+		font-weight: 500;
+	}
+}
+
+@supports (grid-area: auto) {
+
+	.calculate-grades {
+		display: grid;
+		grid-gap: 1.5rem;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) );
+
+		fieldset {
+			grid-column-start: 1;
+			grid-column-end: -1; /* Always take all the columns. */
+		}
+
+		& > p,
+		fieldset {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+.show-results {
+
+	& > table {
+		margin-top: 2rem;
+	}
+
+	.results-match {
+		font-weight: 700;
+	}
 }
