@@ -13,6 +13,7 @@
 function pohjis_customize_register( $wp_customize ) {
 	// Load different part of the Customizer.
 	require_once( get_template_directory() . '/inc/customizer/settings-insta.php' );
+	require_once( get_template_directory() . '/inc/customizer/settings-images.php' );
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';

@@ -54,27 +54,23 @@ function pohjis_header_style() {
 		}
 	}
 
+	if ( is_post_type_archive( 'portfolio_project' ) || is_tax( 'portfolio_category' ) ) {
+		$header_img = get_theme_mod( 'portfolio_header_img' );
+	}
+
+	if ( isset( $header_img ) && $header_img ) {
+		$header_image = $header_img;
+	}
+
 	// Start header styles.
 	$style = '';
 
 	// Header images styles.
 	if ( ! empty( $header_image ) ) {
 		$style .= ".site-header {
-			background-image: linear-gradient( 45deg, rgba(0, 102, 204, 1) 0%, rgba(0, 102, 204, 0.80) 50% ),
+			background-image: linear-gradient( 45deg, rgba(0, 102, 204, 0.8) 0%, rgba(0, 102, 204, 0.70) 50% ),
 					url({$header_image});
 			}";
-
-			$style .= ".home .site-header {
-				background-image: linear-gradient( 90deg, rgba(0, 102, 204, 0.90) 30%, rgba(0, 102, 204, 0.60) 70% ),
-						url({$header_image});
-				}";
-
-				$style .= "@media screen and (min-width: 58em) {
-						.home .site-header {
-							background-image: linear-gradient( 90deg, rgba(0, 102, 204, 0.90) 30%, rgba(0, 102, 204, 0.60) 80% ),
-								url({$header_image});
-							}
-						}";
 	}
 
 	// Echo styles if it's not empty.
