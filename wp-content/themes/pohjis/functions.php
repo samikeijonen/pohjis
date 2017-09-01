@@ -183,7 +183,7 @@ function pohjis_scripts() {
 	wp_enqueue_style( 'pohjis-fonts', pohjis_fonts_url(), array(), null );
 
 	// Add main styles.
-	wp_enqueue_style( 'pohjis-style', get_stylesheet_directory_uri() . '/style' . $suffix . '.css', array(), '20170413' );
+	wp_enqueue_style( 'pohjis-style', get_stylesheet_directory_uri() . '/style' . $suffix . '.css', array(), '20170815' );
 
 	// Add navigation JS.
 	wp_enqueue_script( 'pohjis-navigation', get_template_directory_uri() . '/assets/scripts/navigation' . $suffix . '.js', array(), '20170213', true );
