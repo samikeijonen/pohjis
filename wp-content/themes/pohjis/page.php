@@ -16,10 +16,8 @@ get_header(); ?>
 
 <div class="section">
 	<div class="wrapper wrapper-smaller">
-		<div id="primary" class="content-area two-from-three">
+		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
-
-			<?php //get_template_part( 'template-parts/content', 'child-posts' ); ?>
 
 			<?php
 			while ( have_posts() ) : the_post();

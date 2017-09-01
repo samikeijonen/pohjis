@@ -10,9 +10,8 @@
 get_header(); ?>
 
 <div class="section section-archives">
-	<div class="wrapper">
-		<div class="grid-wrapper grid-wrapper-2cl">
-			<div id="primary" class="content-area two-from-three">
+	<div class="wrapper wrapper-smaller">
+			<div id="primary" class="content-area">
 				<main id="main" class="site-main" role="main">
 
 				<?php if ( have_posts() ) :
@@ -41,8 +40,6 @@ get_header(); ?>
 
 				</main><!-- #main -->
 			</div><!-- #primary -->
-			<?php get_sidebar(); ?>
-		</div><!-- .grid-wrapper -->
 	</div><!-- .wrapper -->
 </div><!-- .section -->
 

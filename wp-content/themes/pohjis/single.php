@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<div class="section">
 		<div class="wrapper wrapper-smaller">
-			<div id="primary" class="content-area two-from-three">
+			<div id="primary" class="content-area">
 				<main id="main" class="site-main" role="main">
 
 				<?php
