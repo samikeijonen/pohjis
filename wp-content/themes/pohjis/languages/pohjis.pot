@@ -268,10 +268,6 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-staff.php:25
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
 #: template-parts/content.php:34
 msgid "Continue reading %s"
 msgstr ""
