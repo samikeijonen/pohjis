@@ -17,22 +17,24 @@ get_header(); ?>
 			<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) : the_post(); ?>
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 					<div class="entry-content">
 					<?php
-						the_content();
+					the_content();
 
-						if ( function_exists( 'Calculate_Grades\form' ) ) :
-							Calculate_Grades\form();
-						endif;
+					if ( function_exists( 'Calculate_Grades\form' ) ) :
+						Calculate_Grades\form();
+					endif;
 					?>
 					</div><!-- .entry-content -->
 				</article><!-- #post-## -->
 
-				<?php 
+				<?php
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
