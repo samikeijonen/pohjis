@@ -25,8 +25,8 @@ get_header(); ?>
 					<?php
 						the_content();
 
-						if ( function_exists( 'calculate_grades_form' ) ) :
-							calculate_grades_form();
+						if ( function_exists( 'Calculate_Grades\form' ) ) :
+							Calculate_Grades\form();
 						endif;
 					?>
 					</div><!-- .entry-content -->
