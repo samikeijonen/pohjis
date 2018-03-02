@@ -47,10 +47,20 @@ fieldset {
 	margin: 0 0 2rem;
 }
 
+legend {
+	font-weight: 700;
+	padding: 0.5rem;
+}
+
 label {
 	font-weight: 500;
 }
 
 .post-password-form input[type="submit"] {
 	margin-top: 1rem;
+}
+
+.wplf-success {
+	background-color: $color__background-screen;
+	padding: 1.5rem;
 }
