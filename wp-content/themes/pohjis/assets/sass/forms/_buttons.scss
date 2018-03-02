@@ -32,6 +32,11 @@ a.button:visited,
 	}
 }
 
+input[type="reset"] {
+	background-color: $color__background-screen;
+	color: $color__text-input;
+}
+
 .button,
 a.button {
 	display: inline-block;
