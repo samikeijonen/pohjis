@@ -1,3 +1,10 @@
+/**
+ * Load Config.
+ *
+ * Customize your project in the config.js file
+ */
+const config = require( './config.js' );
+
 // Require our dependencies
 const autoprefixer = require( 'autoprefixer' );
 const babel = require( 'gulp-babel' );
@@ -8,6 +15,7 @@ const concat = require( 'gulp-concat' );
 const cssnano = require( 'gulp-cssnano' );
 const del = require( 'del' );
 const eslint = require( 'gulp-eslint' );
+const fs = require( 'fs' );
 const gulp = require( 'gulp' );
 const gutil = require( 'gulp-util' );
 const imagemin = require( 'gulp-imagemin' );
@@ -19,6 +27,7 @@ const postcss = require( 'gulp-postcss' );
 const reload = browserSync.reload;
 const rename = require( 'gulp-rename' );
 const sass = require( 'gulp-sass' );
+const sassdoc = require( 'sassdoc' );
 const sassLint = require( 'gulp-sass-lint' );
 const sort = require( 'gulp-sort' );
 const sourcemaps = require( 'gulp-sourcemaps' );
@@ -27,22 +36,10 @@ const svgstore = require( 'gulp-svgstore' );
 const uglify = require( 'gulp-uglify' );
 const wpPot = require( 'gulp-wp-pot' );
 
-// Set assets paths.
-const paths = {
-	'css': [ './*.css', '!*.min.css' ],
-	'icons': 'assets/images/svg-icons/*.svg',
-	'images': [ 'assets/images/*', '!assets/images/*.svg' ],
-	'php': [ './*.php', './**/*.php' ],
-	'sass': 'assets/sass/**/*.scss',
-	'concat_scripts': 'assets/scripts/concat/*.js',
-	'scripts': [ 'assets/scripts/*.js', '!assets/scripts/*.min.js', '!assets/scripts/customizer.js' ],
-	'sprites': 'assets/images/sprites/*.png'
-};
-
 /**
  * Handle errors and alert the user.
  */
-function handleErrors () {
+function handleErrors() {
 	const args = Array.prototype.slice.call( arguments );
 
 	notify.onError( {
@@ -61,7 +58,7 @@ function handleErrors () {
  * Delete style.css and style.min.css before we minify and optimize
  */
 gulp.task( 'clean:styles', () =>
-	del( [ 'style.css', 'style.min.css' ] )
+	del( [ config.styleName, config.styleMinName ] )
 );
 
 /**
@@ -73,7 +70,7 @@ gulp.task( 'clean:styles', () =>
  * https://www.npmjs.com/package/css-mqpacker
  */
 gulp.task( 'postcss', [ 'clean:styles' ], () =>
-	gulp.src( 'assets/sass/*.scss', paths.css )
+	gulp.src( config.styleWatchFiles )
 
 		// Deal with errors.
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
@@ -84,14 +81,14 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
 			// Compile Sass using LibSass.
 			.pipe( sass( {
 				'includePaths': [].concat( bourbon, neat ),
-				'errLogToConsole': true,
-				'outputStyle': 'expanded' // Options: nested, expanded, compact, compressed
+				'errLogToConsole': config.errLogToConsole,
+				'outputStyle': config.outputStyle
 			} ) )
 
 			// Parse with PostCSS plugins.
 			.pipe( postcss( [
 				autoprefixer( {
-					'browsers': [ 'last 2 version' ]
+					'browsers': config.browserList
 				} ),
 				mqpacker( {
 					'sort': true
@@ -102,7 +99,7 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
 		.pipe( sourcemaps.write() )
 
 		// Create style.css.
-		.pipe( gulp.dest( './' ) )
+		.pipe( gulp.dest( config.styleDestination ) )
 		.pipe( browserSync.stream() )
 );
 
@@ -112,13 +109,13 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
  * https://www.npmjs.com/package/gulp-cssnano
  */
 gulp.task( 'cssnano', [ 'postcss' ], () =>
-	gulp.src( 'style.css' )
+	gulp.src( config.styleName )
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
 		.pipe( cssnano( {
 			'safe': true // Use safe optimizations.
 		} ) )
-		.pipe( rename( 'style.min.css' ) )
-		.pipe( gulp.dest( './' ) )
+		.pipe( rename( config.styleMinName ) )
+		.pipe( gulp.dest( config.styleDestination ) )
 		.pipe( browserSync.stream() )
 );
 
@@ -126,7 +123,7 @@ gulp.task( 'cssnano', [ 'postcss' ], () =>
  * Delete the svg-icons.svg before we minify, concat.
  */
 gulp.task( 'clean:icons', () =>
-	del( [ 'assets/images/svg-icons.svg' ] )
+	del( [ config.svgSprite ] )
 );
 
 /**
@@ -137,7 +134,7 @@ gulp.task( 'clean:icons', () =>
  * https://www.npmjs.com/package/gulp-cheerio
  */
 gulp.task( 'svg', [ 'clean:icons' ], () =>
-	gulp.src( paths.icons )
+	gulp.src( config.svgSRC )
 
 		// Deal with errors.
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
@@ -148,22 +145,23 @@ gulp.task( 'svg', [ 'clean:icons' ], () =>
 		// Add a prefix to SVG IDs.
 		.pipe( rename( {'prefix': 'icon-'} ) )
 
-		// Combine all SVGs into a single <symbol>
+		// Combine all SVGs into a single <symbol>.
 		.pipe( svgstore( {'inlineSvg': true} ) )
 
-		// Clean up the <symbol> by removing the following cruft...
+		// Clean up the <symbol> by removing the following cruft.
 		.pipe( cheerio( {
-			'run': function ( $, file ) {
+			'run': function( $, file ) {
 				$( 'svg' ).attr( 'style', 'display:none' );
 				$( '[fill]' ).removeAttr( 'fill' );
 				$( 'path' ).removeAttr( 'class' );
+				$( 'title' ).remove();
 			},
 			'parserOptions': {'xmlMode': true}
 		} ) )
 
 		// Save svg-icons.svg.
-		.pipe( gulp.dest( 'assets/images/' ) )
-		//.pipe( browserSync.stream() )
+		.pipe( gulp.dest( config.svgDST ) )
+		.pipe( browserSync.stream() )
 );
 
 /**
@@ -172,14 +170,14 @@ gulp.task( 'svg', [ 'clean:icons' ], () =>
  * https://www.npmjs.com/package/gulp-imagemin
  */
 gulp.task( 'imagemin', () =>
-	gulp.src( paths.images )
+	gulp.src( config.imgSRC )
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
 		.pipe( imagemin( {
 			'optimizationLevel': 5,
 			'progressive': true,
 			'interlaced': true
 		} ) )
-		.pipe( gulp.dest( 'assets/images' ) )
+		.pipe( gulp.dest( config.imgDST ) )
 );
 
 /**
@@ -190,7 +188,7 @@ gulp.task( 'imagemin', () =>
  * https://www.npmjs.com/package/gulp-sourcemaps
  */
 gulp.task( 'concat', () =>
-	gulp.src( paths.concat_scripts )
+	gulp.src( config.jsConcatSRC )
 
 		// Deal with errors.
 		.pipe( plumber(
@@ -202,18 +200,24 @@ gulp.task( 'concat', () =>
 
 		// Convert ES6+ to ES2015.
 		.pipe( babel( {
-			presets: [ 'es2015' ]
+			'presets': [
+				[ 'env', {
+					'targets': {
+						'browsers': config.browserList
+					}
+				} ]
+			]
 		} ) )
 
 		// Concatenate partials into a single script.
-		.pipe( concat( 'project.js' ) )
+		.pipe( concat( config.jsConcatFile ) )
 
 		// Append the sourcemap to project.js.
 		.pipe( sourcemaps.write() )
 
 		// Save project.js
-		.pipe( gulp.dest( 'assets/scripts' ) )
-		//.pipe( browserSync.stream() )
+		.pipe( gulp.dest( config.jsConcatDST ) )
+		.pipe( browserSync.stream() )
 );
 
 /**
@@ -222,19 +226,30 @@ gulp.task( 'concat', () =>
   * https://www.npmjs.com/package/gulp-uglify
   */
 gulp.task( 'uglify', [ 'concat' ], () =>
-	gulp.src( paths.scripts )
+	gulp.src( config.jsSRC )
+		.pipe( plumber( {'errorHandler': handleErrors} ) )
 		.pipe( rename( {'suffix': '.min'} ) )
+		.pipe( babel( {
+			'presets': [
+				[ 'env', {
+					'targets': {
+						'browsers': config.browserList
+					},
+					'modules': false // Disable strict mode for now.
+				} ]
+			]
+		} ) )
 		.pipe( uglify( {
 			'mangle': false
 		} ) )
-		.pipe( gulp.dest( 'assets/scripts' ) )
+		.pipe( gulp.dest( config.jsDST ) )
 );
 
 /**
  * Delete the theme's .pot before we create a new one.
  */
 gulp.task( 'clean:pot', () =>
-	del( [ 'languages/pohjis.pot' ] )
+	del( [ `${config.translationDST}/${config.translationFile}` ] )
 );
 
 /**
@@ -243,14 +258,14 @@ gulp.task( 'clean:pot', () =>
  * https://www.npmjs.com/package/gulp-wp-pot
  */
 gulp.task( 'wp-pot', [ 'clean:pot' ], () =>
-	gulp.src( paths.php )
+	gulp.src( config.PHPWatchFiles )
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
 		.pipe( sort() )
 		.pipe( wpPot( {
-			'domain': 'pohjis',
-			'package': 'pohjis',
+			'domain': config.textDomain,
+			'package': config.packageName
 		} ) )
-		.pipe( gulp.dest( 'languages/pohjis.pot' ) )
+		.pipe( gulp.dest( `${config.translationDST}/${config.translationFile}` ) )
 );
 
 /**
@@ -259,11 +274,7 @@ gulp.task( 'wp-pot', [ 'clean:pot' ], () =>
  * https://www.npmjs.com/package/sass-lint
  */
 gulp.task( 'sass:lint', () =>
-	gulp.src( [
-		'assets/sass/**/*.scss',
-		'!assets/sass/_normalize.scss',
-		'!node_modules/**'
-	] )
+	gulp.src( config.SassLint )
 		.pipe( sassLint() )
 		.pipe( sassLint.format() )
 		.pipe( sassLint.failOnError() )
@@ -275,43 +286,49 @@ gulp.task( 'sass:lint', () =>
  * https://www.npmjs.com/package/gulp-eslint
  */
 gulp.task( 'js:lint', () =>
-	gulp.src( [
-		'assets/scripts/concat/*.js',
-		'assets/scripts/*.js',
-		'!assets/scripts/project.js',
-		'!assets/scripts/*.min.js',
-		'!Gruntfile.js',
-		'!Gulpfile.js',
-		'!node_modules/**'
-	] )
+	gulp.src( config.JSLint )
 		.pipe( eslint() )
 		.pipe( eslint.format() )
 		.pipe( eslint.failAfterError() )
 );
 
 /**
+ * Sass docs.
+ *
+ * http://sassdoc.com/getting-started/
+ */
+gulp.task( 'sassdoc', function() {
+	let options = {
+		dest: 'docs',
+		verbose: true
+	};
+
+	return gulp.src( config.styleWatchFiles )
+		.pipe( sassdoc( options ) );
+} );
+
+/**
  * Process tasks and reload browsers on file changes.
  *
  * https://www.npmjs.com/package/browser-sync
  */
-gulp.task( 'watch', function () {
+gulp.task( 'watch', function() {
 
 	// Kick off BrowserSync.
 	browserSync( {
-		'open': true,            // Open project in a new tab?
-		'injectChanges': true,   // Auto inject changes instead of full reload.
-		'proxy': 'pohjis.local', // Use http://pohjis.local:3000 to use BrowserSync.
+		'open': config.browserAutoOpen,        // Open project in a new tab?
+		'injectChanges': config.injectChanges, // Auto inject changes instead of full reload.
+		'proxy': config.projectURL,            // Use http://foxland-products.local:3000 to use BrowserSync.
 		'watchOptions': {
-			'debounceDelay': 500  // Wait 0.5 second before injecting.
+			'debounceDelay': 500               // Wait 0.5s second before injecting.
 		}
 	} );
 
 	// Run tasks when files change.
-	//gulp.watch( paths.icons, [ 'icons' ] );
-	gulp.watch( paths.sass, [ 'styles' ] );
-	gulp.watch( paths.scripts, [ 'scripts' ] );
-	//gulp.watch( paths.concat_scripts, [ 'scripts' ] );
-	gulp.watch( paths.php, [ 'markup' ] );
+	gulp.watch( config.SVGWatchFiles, [ 'icons' ] );
+	gulp.watch( config.styleWatchFiles, [ 'styles' ] );
+	gulp.watch( config.jsSRC, [ 'scripts' ] );
+	gulp.watch( config.PHPWatchFiles, [ 'markup' ] );
 } );
 
 /**
@@ -320,7 +337,8 @@ gulp.task( 'watch', function () {
 gulp.task( 'markup', browserSync.reload );
 gulp.task( 'i18n', [ 'wp-pot' ] );
 gulp.task( 'icons', [ 'svg' ] );
-gulp.task( 'scripts', [ 'uglify' ] );
 gulp.task( 'styles', [ 'cssnano' ] );
+gulp.task( 'scripts', [ 'uglify' ] );
 gulp.task( 'lint', [ 'sass:lint', 'js:lint' ] );
-gulp.task( 'default', ['i18n', 'icons', 'styles', 'scripts', 'imagemin'] );
+gulp.task( 'docs', [ 'sassdoc' ] );
+gulp.task( 'default', [ 'i18n', 'icons', 'styles', 'scripts', 'imagemin' ] );
