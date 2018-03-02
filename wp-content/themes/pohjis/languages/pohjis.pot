@@ -1,8 +1,8 @@
-# Copyright (C) 2017 pohjis
-# This file is distributed under the same license as the pohjis package.
+# Copyright (C) 2018 Pohjis
+# This file is distributed under the same license as the Pohjis package.
 msgid ""
 msgstr ""
-"Project-Id-Version: pohjis\n"
+"Project-Id-Version: Pohjis\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -96,6 +96,7 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
+#. translators: The &hellip; is mark after excerpt.
 #: inc/filters.php:16
 msgid "&hellip;"
 msgstr ""
@@ -170,6 +171,7 @@ msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
+#. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:49, inc/template-tags.php:55
 msgid ", "
 msgstr ""
@@ -200,6 +202,7 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
+#. translators: The %s is the post title shown to screen readers.
 #: inc/template-tags.php:113
 msgid "Read article %s"
 msgstr ""
@@ -270,6 +273,26 @@ msgstr ""
 
 #: template-parts/content.php:34
 msgid "Continue reading %s"
+msgstr ""
+
+#: templates/calculate-page.php:2
+msgid "Calculate grades"
+msgstr ""
+
+#: templates/front-page.php:2
+msgid "Front Page"
+msgstr ""
+
+#: templates/intro-page.php:2
+msgid "Intro Page"
+msgstr ""
+
+#: templates/no-sidebar-page.php:2
+msgid "No sidebar page"
+msgstr ""
+
+#: templates/teme-page.php:2
+msgid "TeMe Page"
 msgstr ""
 
 #: inc/customizer/settings-images.php:7
