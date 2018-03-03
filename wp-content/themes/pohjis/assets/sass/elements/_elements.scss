@@ -22,8 +22,7 @@ q {
 	}
 }
 
-.entry-content blockquote,
-.section-content blockquote {
+blockquote {
 	border-left: 4px solid;
 	font-size: 1.125em;
 	font-style: italic;
@@ -55,7 +54,11 @@ img {
 }
 
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+	margin: 1rem 0 2rem; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+figcaption {
+	font-size: 0.875em;
 }
 
 @import "tables";

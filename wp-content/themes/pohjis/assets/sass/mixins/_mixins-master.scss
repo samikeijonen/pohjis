@@ -4,6 +4,35 @@
 	font-size: $sizeValue * 1rem;
 }
 
+// Button block.
+@mixin button-block {
+	border: 0;
+	border-radius: 2px;
+	background-color: $color__background-button;
+	color: $color__text-light;
+	font-weight: 500;
+	line-height: 1;
+	padding: 0.7em 1.5em 0.75em;
+	text-align: center;
+	transition: all 0.25s ease-in-out;
+}
+
+// Button block on hover and focus.
+@mixin button-block-hover {
+	background-color: lighten( $color__background-button, 4%);
+	@include box-shadow-button();
+	color: $color__text-light;
+	transform: translateY(-1px);
+}
+
+@mixin body-typography {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	line-height: $font__line-height-body;
+	word-wrap: break-word;
+}
+
 // Center block
 @mixin center-block {
 	display: block;

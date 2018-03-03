@@ -42,6 +42,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## SVG
 	## Captions
 	## Galleries
+# Animations
+# Blocks
 
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
@@ -111,3 +113,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Animations
 --------------------------------------------------------------*/
 @import "animations/animations";
+
+/*--------------------------------------------------------------
+# Blocks
+--------------------------------------------------------------*/
+@import "modules/blocks";

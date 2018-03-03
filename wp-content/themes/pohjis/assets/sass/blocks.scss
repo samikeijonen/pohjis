@@ -1,0 +1,29 @@
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+.edit-post-visual-editor {
+	@include body-typography;
+
+	p {
+		@include body-typography;
+	}
+
+	// Typography.
+	@import "typography/headings";
+	@import "typography/copy";
+
+	// Elements.
+	@import "elements/elements";
+
+	// Blocks.
+	@import "modules/blocks";
+
+	*[class^="wp-block-"],
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 0;
+	}
+}

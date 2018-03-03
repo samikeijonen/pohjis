@@ -1,0 +1,203 @@
+// Button.
+.wp-block-button {
+	margin-bottom: 2em;
+
+	& .wp-block-button__link {
+		@include button-block;
+		display: inline-block;
+
+		&:hover,
+		&:focus,
+		&:active {
+			@include button-block-hover;
+		}
+	}
+
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignright {
+		text-align: right;
+	}
+}
+
+
+// Cover image.
+.wp-block-cover-image {
+	align-items: center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+	min-height: 28rem;
+	position: relative;
+
+	&.has-left-content {
+		justify-content: flex-start;
+
+		h2 {
+			margin-left: 0;
+			text-align: left;
+		}
+	}
+
+	&.has-right-content {
+		justify-content: flex-end;
+
+		h2 {
+			margin-right: 0;
+			text-align: right;
+		}
+	}
+
+	h2 {
+		color: $color__text-light;
+		font-size: 2rem;
+		line-height: 1em;
+		z-index: 1;
+		padding: 1.5rem;
+		text-align: center;
+	}
+
+	&.has-parallax {
+		background-attachment: fixed;
+	}
+
+	&.has-background-dim:before {
+		background-color: rgba( $color__background-black, 0.5 );
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	@for $i from 1 through 10 {
+		&.has-background-dim.has-background-dim-#{ $i * 10 }:before {
+			background-color: rgba( black, $i * 0.1 );
+		}
+	}
+
+	&.components-placeholder {
+		height: inherit;
+	}
+
+}
+
+// Gallery.
+.wp-block-gallery,
+.wp-block-gallery.alignleft,
+.wp-block-gallery.alignright,
+.wp-block-gallery.aligncenter {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	margin-left: 0;
+
+	.blocks-gallery-item {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		justify-content: center;
+		margin: 0.5rem;
+		position: relative;
+
+
+		figure {
+			margin: 0;
+			height: 100%;
+			display: flex;
+			align-items: flex-end;
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+
+		figcaption {
+			background-color: rgba( $color__background-black, 0.7 );
+			color: $color__text-light;
+			padding: 0.25rem;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+		}
+	}
+
+	// Cropped
+	&.is-cropped .blocks-gallery-item {
+		a,
+		img {
+			flex: 1;
+			height: 100%;
+			object-fit: cover;
+			width: 100%;
+		}
+
+		// Alas, IE11+ doesn't support object-fit
+		_:-ms-lang(x),
+		figure {
+			height: auto;
+			width: auto;
+		}
+	}
+
+	// Responsive fallback value, 2 columns
+	& .blocks-gallery-image,
+	& .blocks-gallery-item {
+		width: calc( 100% / 2 - 1rem );
+	}
+
+	&.columns-1 .blocks-gallery-image,
+	&.columns-1 .blocks-gallery-item {
+		width: calc(100% / 1 - 1rem);
+	}
+
+	@media (min-width: $break__point-main-grid) {
+		@for $i from 3 through 8 {
+			&.columns-#{ $i } .blocks-gallery-image,
+			&.columns-#{ $i } .blocks-gallery-item {
+				width: calc(100% / #{ $i } - 1rem );
+			}
+		}
+	}
+}
+
+// Paragraph.
+.has-drop-cap {
+	&:first-letter {
+		float: left;
+		font-size: 4rem;
+		line-height: 1;
+		font-family: serif;
+		font-weight: bold;
+		margin-right: 0.5rem;
+		text-transform: uppercase;
+		font-style: normal;
+	}
+}
+
+.has-drop-cap:not( :focus )  {
+	overflow: hidden;
+}
+
+.has-background {
+	padding: 1.5rem;
+}
+
+// Quote and pullquote.
+.wp-block-quote.is-large {
+	font-size: 1.5rem;
+}
+
+.wp-block-pullquote {
+	border-bottom: 4px solid;
+	border-left: 0;
+	border-top: 4px solid;
+	padding: 3rem 0;
+	text-align: center;
+}

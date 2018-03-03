@@ -71,6 +71,18 @@ function pohjis_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	// Add support for editor color palette.
+	add_theme_support( 'editor-color-palette',
+		'#0066cc',
+		'#ffd046',
+		'#f5f7f8',
+		'#434343',
+		'#fff'
+	);
+
+	// Add support for align wide blocks.
+	add_theme_support( 'align-wide' );
+
 	// Add theme support for breadcrumb trail.
 	add_theme_support( 'breadcrumb-trail' );
 
@@ -194,12 +206,36 @@ function pohjis_scripts() {
 	// Add skip link focus fix JS.
 	wp_enqueue_script( 'pohjis-skip-link-focus-fix', get_template_directory_uri() . '/assets/scripts/skip-link-focus-fix' . $suffix . '.js', array(), '20170215', true );
 
+	// Dequeue Core block styles.
+	wp_dequeue_style( 'wp-blocks' );
+
 	// Add comment reply JS.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'pohjis_scripts' );
+
+/**
+ * Enqueue scripts and styles for the editor.
+ */
+function pohjis_editor_scripts() {
+	// Get '.min' suffix.
+	$suffix = pohjis_get_min_suffix();
+
+	// Add custom fonts.
+	wp_enqueue_style( 'pohjis-fonts', pohjis_fonts_url(), array(), null );
+
+	// Add block styles to editor.
+	wp_enqueue_style( 'pohjis-block-styles', get_theme_file_uri( '/blocks' . $suffix . '.css' ), array(), '20180101' );
+
+	// Dequeue Core block fonts.
+	wp_dequeue_style( 'wp-editor-font' );
+
+	// Dequeue Core block styles.
+	wp_dequeue_style( 'wp-blocks' );
+}
+add_action( 'enqueue_block_editor_assets', 'pohjis_editor_scripts' );
 
 /**
  * Helper function for getting the script/style `.min` suffix for minified files.
@@ -254,9 +290,9 @@ require get_template_directory() . '/inc/polylang.php';
 /**
  * Butterbean for metaboxes.
  */
-require get_template_directory() . '/inc/butterbean/butterbean.php';
+//require get_template_directory() . '/inc/butterbean/butterbean.php';
 
 /**
  * Metaboxes using Butterbean.
  */
-require get_template_directory() . '/inc/metabox/metabox.php';
+//require get_template_directory() . '/inc/metabox/metabox.php';

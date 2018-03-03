@@ -6,14 +6,17 @@ a {
 	&:visited {
 		color: $color__link-visited;
 	}
+
 	&:hover,
 	&:focus,
 	&:active {
 		color: $color__link-hover;
 	}
+
 	&:focus {
 		outline: thin dotted;
 	}
+
 	&:hover,
 	&:active {
 		outline: 0;
@@ -24,8 +27,8 @@ a {
 	outline-offset: -4px;
 }
 
-.entry-content a:not(.button),
-.section-content a:not(.button) {
+.entry-content a:not(.button):not(.wp-block-button__link),
+.section-content a:not(.button):not(.wp-block-button__link) {
 	text-decoration: underline;
 }
 

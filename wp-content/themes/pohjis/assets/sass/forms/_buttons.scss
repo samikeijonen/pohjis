@@ -7,23 +7,12 @@ a.button,
 a.button:visited,
 .button > a,
 .button > a:visited {
-	border: 0;
-	border-radius: 2px;
-	background-color: $color__background-button;
-	color: $color__text-light;
-	font-weight: 500;
-	line-height: 1;
-	padding: 0.7em 1.5em 0.75em;
-	text-align: center;
-	transition: all 0.25s ease-in-out;
+	@include button-block;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: lighten( $color__background-button, 4%);
-		@include box-shadow-button();
-		color: $color__text-light;
-		transform: translateY(-1px);
+		@include button-block-hover;
 	}
 
 	&:focus {
