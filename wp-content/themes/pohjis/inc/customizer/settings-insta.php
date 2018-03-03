@@ -1,4 +1,9 @@
 <?php
+/**
+ * Instagram section in the Customizer.
+ *
+ * @package Pohjis
+ */
 
 // Add the 'insta' section.
 $wp_customize->add_section(
@@ -25,6 +30,6 @@ $wp_customize->add_control(
 		'label'    => esc_html__( 'Instagram access token', 'pohjis' ),
 		'section'  => 'insta',
 		'priority' => 10,
-		'type'     => 'text'
+		'type'     => 'text',
 	)
 );

@@ -155,26 +155,26 @@ function pohjis_get_social_links() {
 
 	// Facebook.
 	$output .= '<li class="share-list-item share-link">';
-		$output .= '<a href="https://facebook.com/sharer/sharer.php?u=' . esc_url( get_permalink() ) . '&t=' . urlencode( the_title_attribute( 'echo=0' ) ) . '" target="_blank">';
-			$output .= pohjis_get_svg( array( 'icon' => 'facebook' ) );
-			$output .= '<span class="screen-reader-text">' . esc_html__( 'Share on Facebook', 'pohjis' ) . '</span>';
-		$output .= '</a>';
+	$output .= '<a href="https://facebook.com/sharer/sharer.php?u=' . esc_url( get_permalink() ) . '&t=' . urlencode( the_title_attribute( 'echo=0' ) ) . '" target="_blank">';
+	$output .= pohjis_get_svg( array( 'icon' => 'facebook' ) );
+	$output .= '<span class="screen-reader-text">' . esc_html__( 'Share on Facebook', 'pohjis' ) . '</span>';
+	$output .= '</a>';
 	$output .= '</li>';
 
 	// Twitter.
 	$output .= '<li class="share-list-item share-link">';
-		$output .= '<a href="https://twitter.com/intent/tweet/?url=' . esc_url( get_permalink() ) . '&text=' . urlencode( the_title_attribute( 'echo=0' ) ) .'" target="_blank">';
-			$output .= pohjis_get_svg( array( 'icon' => 'twitter' ) );
-			$output .= '<span class="screen-reader-text">' . esc_html__( 'Share on Twitter', 'pohjis' ) . '</span>';
-		$output .= '</a>';
+	$output .= '<a href="https://twitter.com/intent/tweet/?url=' . esc_url( get_permalink() ) . '&text=' . urlencode( the_title_attribute( 'echo=0' ) ) .'" target="_blank">';
+	$output .= pohjis_get_svg( array( 'icon' => 'twitter' ) );
+	$output .= '<span class="screen-reader-text">' . esc_html__( 'Share on Twitter', 'pohjis' ) . '</span>';
+	$output .= '</a>';
 	$output .= '</li>';
 
 	// Linkedin
 	$output .= '<li class="share-list-item share-link">';
-		$output .= '<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=' . esc_url( get_permalink() ) . '&amp;title=' . urlencode( the_title_attribute( 'echo=0' ) ) . '&amp;summary=' . urlencode( the_title_attribute( 'echo=0' ) ) . '&amp;source=' . esc_url( get_permalink() ) . '" target="_blank">';
-			$output .= pohjis_get_svg( array( 'icon' => 'linkedin' ) );
-			$output .= '<span class="screen-reader-text">' . esc_html__( 'Share on Linkedin', 'pohjis' ) . '</span>';
-		$output .= '</a>';
+	$output .= '<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=' . esc_url( get_permalink() ) . '&amp;title=' . urlencode( the_title_attribute( 'echo=0' ) ) . '&amp;summary=' . urlencode( the_title_attribute( 'echo=0' ) ) . '&amp;source=' . esc_url( get_permalink() ) . '" target="_blank">';
+	$output .= pohjis_get_svg( array( 'icon' => 'linkedin' ) );
+	$output .= '<span class="screen-reader-text">' . esc_html__( 'Share on Linkedin', 'pohjis' ) . '</span>';
+	$output .= '</a>';
 	$output .= '</li>';
 
 	return $output;
@@ -221,4 +221,4 @@ function pohjis_category_transient_flusher() {
 	delete_transient( 'pohjis_categories' );
 }
 add_action( 'edit_category', 'pohjis_category_transient_flusher' );
-add_action( 'save_post',     'pohjis_category_transient_flusher' );
+add_action( 'save_post', 'pohjis_category_transient_flusher' );

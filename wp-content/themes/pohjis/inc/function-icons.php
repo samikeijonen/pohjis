@@ -17,7 +17,7 @@ function pohjis_include_svg_icons() {
 
 	// If it exists, include it.
 	if ( file_exists( $svg_icons ) ) {
-		require_once( $svg_icons );
+		require_once $svg_icons;
 	}
 
 }
@@ -69,7 +69,7 @@ function pohjis_get_svg( $args = array() ) {
 		$aria_hidden     = '';
 	}
 
-	// Begin SVG markup
+	// Begin SVG markup.
 	$svg = '<svg class="icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 
 	// If there is a title, display it.
@@ -181,9 +181,9 @@ add_filter( 'walker_nav_menu_start_el', 'pohjis_nav_social_icons', 10, 4 );
  * @return string $title The menu item's title with dropdown icon.
  */
 function pohjis_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
-	if ( 'primary' == $args->theme_location ) {
+	if ( 'primary' === $args->theme_location ) {
 		foreach ( $item->classes as $value ) {
-			if ( $value === 'menu-item-has-children' ) {
+			if ( 'menu-item-has-children' === $value ) {
 				$title = $title . pohjis_get_svg( array( 'icon' => 'angle-down' ) );
 			}
 		}

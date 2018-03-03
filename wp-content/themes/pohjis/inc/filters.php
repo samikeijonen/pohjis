@@ -50,6 +50,7 @@ function pohjis_archive_title_filter( $title ) {
 	} elseif ( is_author() ) {
 		$title = get_the_author_meta( 'display_name', absint( get_query_var( 'author' ) ) );
 	} elseif ( is_search() ) {
+		/* translators: %s is searc string. */
 		$title = sprintf( esc_html__( 'Search results for &#8220;%s&#8221;', 'pohjis' ), get_search_query() );
 	} elseif ( is_post_type_archive() ) {
 		$title = post_type_archive_title( '', false );
@@ -98,7 +99,7 @@ function pohjis_portfolio_taxonomy_template( $template ) {
 	if ( is_tax( 'portfolio_category' ) || is_tax( 'portfolio_tag' ) ) {
 		$new_template = locate_template( array( 'archive-portfolio_project.php' ) );
 		if ( '' !== $new_template ) {
-			return $new_template ;
+			return $new_template;
 		}
 	}
 
@@ -142,12 +143,19 @@ function pohjis_widget_tag_cloud_args( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'pohjis_widget_tag_cloud_args' );
 
+/**
+ * Image sizes array.
+ *
+ * @param  array $sizes Image sizes.
+ * @return array A new modified arguments.
+ */
 function pohjis_show_image_sizes( $sizes ) {
 	$sizes['pohjis-small'] = esc_html__( 'Pohjis thumbnail', 'pohjis' );
 
 	return $sizes;
 }
 add_filter( 'image_size_names_choose', 'pohjis_show_image_sizes' );
+
 /**
  * Duplicate 'the_content' filters.
  *
