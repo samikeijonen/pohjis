@@ -293,9 +293,9 @@ require get_template_directory() . '/inc/polylang.php';
 /**
  * Butterbean for metaboxes.
  */
-//require get_template_directory() . '/inc/butterbean/butterbean.php';
+require get_template_directory() . '/inc/butterbean/butterbean.php';
 
 /**
  * Metaboxes using Butterbean.
  */
-//require get_template_directory() . '/inc/metabox/metabox.php';
+require get_template_directory() . '/inc/metabox/metabox.php';
